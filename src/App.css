@@ -47,7 +47,7 @@
 .card {
   padding: 8px 0;
   width: 100%;
-  background-color: beige;
+  background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }

@@ -1,6 +1,4 @@
-import { ComponentA, ComponentB } from '.';
-import { Button } from './Button';
-import { TextInput } from './TextInput';
+import { ComponentA, ComponentB, Button, TextInput } from '.';
 
 const ConditionalComponent = (props) => {
   return (

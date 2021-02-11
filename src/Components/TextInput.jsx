@@ -1,4 +1,4 @@
-export const TextInput = () => {
+const TextInput = () => {
   return (
     <div className="input-container">
       <label for="fname">Type here</label>
@@ -6,3 +6,5 @@ export const TextInput = () => {
     </div>
   );
 };
+
+export default TextInput;

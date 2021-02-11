@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <MyFirstClassComponent />
-        <MyFirstFunctionalComponent /> */}
+        <MyFirstClassComponent />
+        <MyFirstFunctionalComponent />
         <ConditionalComponent />
       </header>
     </div>

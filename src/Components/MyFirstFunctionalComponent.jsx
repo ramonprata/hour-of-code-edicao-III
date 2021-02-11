@@ -1,4 +1,4 @@
 const MyFirstFunctionalComponent = () => {
-  return <h1>MyFirstFunctionalComponent</h1>;
+  return <h6>MyFirstFunctionalComponent</h6>;
 };
 export default MyFirstFunctionalComponent;
