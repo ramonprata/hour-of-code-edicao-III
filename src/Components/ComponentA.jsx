@@ -1,4 +1,4 @@
-const ComponentA = (props) => {
+const ComponentA = () => {
   return <div className="card">ComponentA</div>;
 };
 

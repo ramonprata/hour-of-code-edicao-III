@@ -1,5 +1,13 @@
 const Button = () => {
-  return <button className="button">Click me</button>;
+  const handleClick = () => {
+    alert('Clicked');
+  };
+
+  return (
+    <button className="button" onClick={handleClick}>
+      Click me
+    </button>
+  );
 };
 
 export default Button;
