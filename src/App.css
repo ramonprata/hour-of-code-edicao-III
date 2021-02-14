@@ -14,17 +14,29 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #b5bfd1; */
+  background-image: url('https://2020.stateofjs.com/images/tshirt/stateofjs2020-tshirt-export.png;');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
 }
 
-.App-link {
+.content {
+  background-color: black;
+  opacity: 0.9;
+  padding: 16px;
+  border-radius: 24px;
+  min-width: 30%;
+}
+
+.contai .App-link {
   color: #61dafb;
 }
 
@@ -35,4 +47,74 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  background-color: #ddd;
+  color: #055c79;
+}
+
+.card {
+  padding: 8px 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  position: relative;
+  background-color: #008cba;
+  border: none;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: '';
+  background: #055c79;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.button:active {
+  outline: none;
+  border: none;
+}
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+}
+
+.input-container {
+  text-align: left;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 18px;
 }

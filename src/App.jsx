@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import Hello from './Hello';
+import {
+  MyFirstFunctionalComponent,
+  MyFirstClassComponent,
+  ConditionalComponent,
+} from './Components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Hello />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="content">
+          <ConditionalComponent renderA={true} />
+          <MyFirstClassComponent />
+          <MyFirstFunctionalComponent />
+        </div>
       </header>
     </div>
   );
