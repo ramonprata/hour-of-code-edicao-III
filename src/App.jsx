@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="content">
+          {/* ConditionalComponent recebe props renderA para decidir se renderiza ComponentA ou não  */}
           <ConditionalComponent renderA={true} />
           <MyFirstClassComponent />
           <MyFirstFunctionalComponent />

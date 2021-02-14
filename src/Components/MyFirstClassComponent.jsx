@@ -2,18 +2,20 @@ import React from 'react';
 
 class MyFirstClassComponent extends React.Component {
   state = {
-    estaoLocal: 'Meu estado Local',
+    estaoLocal: 'Class component estado local',
   };
 
+  // lifecycle executado quando o componente é montado
   componentDidMount() {
     // criar uma variavel no localstorage
     setTimeout(() => {
-      this.setState({ estaoLocal: 'Meu estado local mudado após 5s' });
+      this.setState({ estaoLocal: 'Class component estado local - modificado após 5s' });
     }, 5000);
   }
 
+  // lifecycle executado quando o componente é desmontado
   componentWillUnmount() {
-    // apagar uma variavel
+    // apagar uma variavel no localstorage
   }
 
   render() {

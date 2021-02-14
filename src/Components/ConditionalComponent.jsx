@@ -21,8 +21,8 @@ const ConditionalComponent = (props) => {
 
       {/* renderização condicionada as props */}
       {renderA && <ComponentA />}
-      <ComponentB />
 
+      <ComponentB />
       <TextInput />
       <Button />
     </div>
