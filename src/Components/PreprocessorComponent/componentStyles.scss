@@ -1,7 +1,6 @@
 // $font-stack:    Helvetica, sans-serif;
 $light-blue: #e49b57;
 
-
 .my-style-with-prepreocessor {
   padding: 8px 0;
   background-color: $light-blue;
@@ -10,7 +9,17 @@ $light-blue: #e49b57;
   transition: all 0.4s;
   border-radius: 4px;
   filter: brightness(90%);
-  border: solid 2px  $light-blue;
+  border: solid 2px $light-blue;
+
+  header {
+    font-weight: bold;
+  }
+  p {
+    font-size: 16px;
+  }
+  .flag {
+    color: #bbb;
+  }
 }
 
 .my-style-with-prepreocessor:hover {
@@ -19,16 +28,4 @@ $light-blue: #e49b57;
   filter: brightness(100%);
   transform: scale(1.05);
   border: solid 2px #fff;
-}
-
-.my-style-with-prepreocessor > header {
-  font-weight: bold;
-}
-
-.my-style-with-prepreocessor > p {
-  font-size: 16px;
-}
-
-.my-style-with-prepreocessor > .flag {
-  color: #bbb;
 }
