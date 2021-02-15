@@ -17,13 +17,13 @@ const MaterialUIStyleComponent = (props) => {
 const useStyles = makeStyles({
   container: {
     padding: '8px 0',
-    backgroundColor: '#c3b32b',
+    backgroundColor: '#4ea09b',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
     color: '#fff',
     transition: 'all 0.4s',
     borderRadius: 4,
     filter: 'brightness(90%)',
-    border: 'solid 2px  #c3b32b',
+    border: 'solid 2px  #4ea09b',
 
     '&:hover': {
       transition: 'all 0.4s',

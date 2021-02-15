@@ -5,7 +5,7 @@ export { default as ComponentA } from './ComponentA';
 export { default as ComponentB } from './ComponentB';
 export { default as TextInput } from './TextInput';
 export { default as Button } from './Button';
-export { default as InlineStyleComponent } from './InlineStyleComponent';
+export { default as InlineStyleComponent } from './InlineStyleComponent/InlineStyleComponent';
 export { default as CssComponent } from '../Components/CssComponent/CssComponent';
 export { default as PreprocessorComponent } from '../Components/PreprocessorComponent/PreprocessorComponent';
 export { default as StyledComponent } from '../Components/StyledComponent/StyledComponent';
