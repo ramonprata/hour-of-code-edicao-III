@@ -29,9 +29,7 @@
 }
 
 .content {
-  /* background-color: #171e2d; */
   background-color: #3b455ff5;
-  /* opacity: 0.95; */
   padding: 24px;
   border-radius: 24px;
   display: grid;
