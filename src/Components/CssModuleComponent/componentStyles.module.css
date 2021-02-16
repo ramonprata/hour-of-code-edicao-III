@@ -1,0 +1,33 @@
+.container {
+  padding: 8px 0;
+  background-color: #c3b32b;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  transition: all 0.4s;
+  border-radius: 4px;
+  filter: brightness(90%);
+  border: solid 2px #c3b32b;
+}
+.container:hover {
+  transition: all 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+  filter: brightness(100%);
+  transform: scale(1.05);
+  border: solid 2px #fff;
+}
+
+.container > header {
+  font-weight: bold;
+}
+
+.container > p {
+  font-size: 16px;
+}
+
+.flag {
+  color: #bbb;
+}
+
+.activeFlag {
+  color: #fff;
+}
