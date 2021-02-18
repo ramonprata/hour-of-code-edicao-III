@@ -56,3 +56,24 @@
 
     - [Styled Components](https://styled-components.com/) 
        
+
+
+## Aula IV
+### Componentização e boas práticas no React | Aula dia 18/02 às 18h
+- **Tópicos abordados**
+    - componentização / overview / benefícios
+    - componentização no front
+    - componentização no react - boas praticas
+        - props.children
+        - componente as props
+        - render props
+        - uso de keys
+        - uso de proptypes
+        - uso de default props
+
+- **Links úteis**
+
+    - [React: composição vs hierarquia](https://reactjs.org/docs/composition-vs-inheritance.html#gatsby-focus-wrapper)
+
+    - [React: Render props](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper)
+
