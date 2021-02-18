@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 
 const SearchInput = (props) => {
-  const { onTyping } = props;
-  const [searchText, setSearchText] = useState('');
+  const { onTyping, searchText } = props;
   const classes = useStyles(props);
   const {} = classes;
 
   const handleChange = (event) => {
     const text = event.target.value;
-    setSearchText(event.target.value);
+
     if (onTyping) {
       onTyping(text);
     }
@@ -29,6 +28,7 @@ const SearchInput = (props) => {
 
 SearchInput.propTypes = {
   onTyping: PropTypes.func,
+  searchText: PropTypes.string,
 };
 
 const useStyles = makeStyles({
