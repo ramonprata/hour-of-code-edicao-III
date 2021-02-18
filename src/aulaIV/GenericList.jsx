@@ -7,12 +7,12 @@ const GenericList = (props) => {
   const { items, renderItem, uniqKey, searchText, onSearch } = props;
 
   return (
-    <div>
+    <>
       {onSearch && <SearchInput onTyping={onSearch} searchText={searchText} />}
       {items.map((item) => (
         <React.Fragment key={item[uniqKey]}>{renderItem(item)}</React.Fragment>
       ))}
-    </div>
+    </>
   );
 };
 
