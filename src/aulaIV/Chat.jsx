@@ -4,7 +4,6 @@ import { paletteColors } from '../shared/consts';
 import GenericList from './GenericList';
 import ChatItem from './ChatItem';
 import { chatData } from '../shared/mocks/chat.mock';
-import SearchInput from './SearchInput';
 
 const Chat = () => {
   const classes = useStyles();
@@ -22,11 +21,12 @@ const Chat = () => {
     <div className={classes.container}>
       <header className={classes.header}>Chat</header>
       <div className={classes.content}>
-        <SearchInput onTyping={(text) => setSearchText(text)} searchText={searchText} />
         <GenericList
           items={filteredChats}
           renderItem={(item) => renderChatItem(item)}
           uniqKey="id"
+          searchText={searchText}
+          onSearch={(text) => setSearchText(text)}
         />
       </div>
     </div>
