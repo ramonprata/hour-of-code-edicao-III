@@ -26,7 +26,6 @@ const useStyles = makeStyles({
     columnGap: 24,
     '& *': {
       borderRadius: 4,
-      padding: 16,
     },
   },
 });
