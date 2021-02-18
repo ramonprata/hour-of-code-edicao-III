@@ -29,12 +29,15 @@
 }
 
 .content {
-  background-color: #3b455ff5;
+  /* background-color: #3b455ff5; */
+  background-color: #25252ef7;
   padding: 24px;
   border-radius: 24px;
   display: grid;
   gap: 24px;
-  grid-template-columns: 20rem 20rem;
+  /* grid-template-columns: 20rem 20rem; */
+  grid-template-columns: 1fr;
+  min-width: 40vw;
 }
 
 .contai .App-link {

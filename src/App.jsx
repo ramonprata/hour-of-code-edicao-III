@@ -1,36 +1,24 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { MyFirstFunctionalComponent, MyFirstClassComponent, ConditionalComponent } from './aulaII';
 import {
-  MyFirstFunctionalComponent,
-  MyFirstClassComponent,
-  ConditionalComponent,
   InlineStyleComponent,
   CssComponent,
   PreprocessorComponent,
   StyledComponent,
   MaterialUIStyleComponent,
   CssModuleComponent,
-} from './Components';
+} from './aulaIII';
+import { WelcomeDialog, SlitPane, Chat, Contacts, Feed } from './aulaIV';
 
 function App() {
-  const [isActive, setActive] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setActive(true);
-    }, 5000);
-  }, []);
-
   return (
     <div className="App">
       <header className="App-header">
         <div className="content">
-          <InlineStyleComponent isActive={isActive} />
-          <CssComponent isActive={isActive} />
-          <CssModuleComponent isActive={isActive} />
-          <PreprocessorComponent isActive={isActive} />
-          <StyledComponent isActive={isActive} />
-          <MaterialUIStyleComponent isActive={isActive} />
+          <SlitPane rightContent={<Chat />} leftContent={<Contacts />}>
+            <Feed />
+          </SlitPane>
         </div>
       </header>
     </div>
