@@ -47,6 +47,7 @@ const useStyles = makeStyles({
     backgroundColor: '#fff',
     borderRadius: '0 0 8px 8px',
     height: '30vh',
+    overflowY: 'auto',
   },
 });
 

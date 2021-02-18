@@ -2,7 +2,7 @@ export const contacts = [
   {
     id: '564',
     contactName: 'Fulano',
-    phoneNumber: '55 31 8111231546',
+    phoneNumber: '55 31 811123154',
   },
   {
     id: '123',

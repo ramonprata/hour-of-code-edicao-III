@@ -8,7 +8,7 @@ const ChatItem = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div className={classes.itemContainer}>
+    <div className={classes.itemContainer} onClick={() => alert(user.userName)}>
       <div className={classes.avatar}>
         <img src={user.avatar} alt={user.userName} />
       </div>
