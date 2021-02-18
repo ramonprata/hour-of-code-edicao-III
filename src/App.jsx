@@ -9,16 +9,16 @@ import {
   MaterialUIStyleComponent,
   CssModuleComponent,
 } from './aulaIII';
-import { WelcomeDialog, SlitPane, Chat, Contacts, Feed } from './aulaIV';
+import { WelcomeDialog, SplitPane, Chat, Contacts, Feed } from './aulaIV';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <div className="content">
-          <SlitPane rightContent={<Chat />} leftContent={<Contacts />}>
+          <SplitPane rightContent={<Chat />} leftContent={<Contacts />}>
             <Feed />
-          </SlitPane>
+          </SplitPane>
         </div>
       </header>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 
-const SlitPane = (props) => {
+const SplitPane = (props) => {
   const { leftContent, rightContent } = props;
   const classes = useStyles(props);
 
@@ -15,7 +15,10 @@ const SlitPane = (props) => {
   );
 };
 
-SlitPane.propTypes = {};
+SplitPane.propTypes = {
+  leftContent: PropTypes.node,
+  rightContent: PropTypes.node,
+};
 
 const useStyles = makeStyles({
   container: {
@@ -30,4 +33,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default SlitPane;
+export default SplitPane;
