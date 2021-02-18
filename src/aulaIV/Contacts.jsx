@@ -26,8 +26,6 @@ const Contacts = () => {
   );
 };
 
-Contacts.propTypes = {};
-
 const useStyles = makeStyles({
   container: {
     minHeight: '20vh',

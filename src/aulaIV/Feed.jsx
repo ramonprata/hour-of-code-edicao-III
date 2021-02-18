@@ -25,8 +25,6 @@ const Feed = () => {
   );
 };
 
-Feed.propTypes = {};
-
 const useStyles = makeStyles({
   container: {
     minHeight: '20vh',

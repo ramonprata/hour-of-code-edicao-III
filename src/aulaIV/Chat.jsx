@@ -33,8 +33,6 @@ const Chat = () => {
   );
 };
 
-Chat.propTypes = {};
-
 const useStyles = makeStyles({
   container: {
     backgroundColor: paletteColors.primary,
