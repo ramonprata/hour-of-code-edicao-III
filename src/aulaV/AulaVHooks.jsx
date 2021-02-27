@@ -5,21 +5,43 @@ import FormNoHooks from './FormNoHooks';
 import FormWithHooks from './FormWithHooks';
 import Controls from './Controls';
 import { ThemeContext } from '../App';
-import { Card } from '@material-ui/core';
+import { Card, FormControlLabel, Switch } from '@material-ui/core';
 
 const AulaVHooks = (props) => {
+  const { darkMode, handleSwitchDarkMode } = props;
   const [formSelected, setFormSelected] = useState('both');
-  const theme = useContext(ThemeContext);
 
   function handleFormChange(e) {
     setFormSelected(e.target.value);
   }
 
+  const theme = useContext(ThemeContext);
   const classes = useStyles(theme);
+
+  // passa Switch como props para controls renderizar (composição usando component as props: customControls)
+  const renderSwitchDarckMode = () => {
+    return (
+      <FormControlLabel
+        control={
+          <Switch
+            checked={darkMode}
+            onChange={handleSwitchDarkMode}
+            name="enebledDarkMode"
+            color="primary"
+          />
+        }
+        label="Dark mode"
+      />
+    );
+  };
 
   return (
     <div className={classes.container}>
-      <Controls handleFormChange={handleFormChange} formSelected={formSelected} />
+      <Controls
+        handleFormChange={handleFormChange}
+        formSelected={formSelected}
+        customControls={renderSwitchDarckMode()}
+      />
       <div className={classes.formsContainer}>
         {(formSelected === 'noHooks' || formSelected === 'both') && <FormNoHooks />}
         {(formSelected === 'hooks' || formSelected === 'both') && <FormWithHooks />}
@@ -29,7 +51,9 @@ const AulaVHooks = (props) => {
   );
 };
 
-AulaVHooks.propTypes = {};
+AulaVHooks.propTypes = {
+  darkMode: PropTypes.bool,
+};
 
 const useStyles = makeStyles({
   container: {

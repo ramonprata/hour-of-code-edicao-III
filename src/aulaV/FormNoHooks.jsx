@@ -26,6 +26,7 @@ class FormNoHooks extends React.Component {
   setDocumentTitle = (name) => {
     document.title = name;
   };
+
   handleReziseWidth = () => {
     this.setState({ width: window.innerWidth });
   };
