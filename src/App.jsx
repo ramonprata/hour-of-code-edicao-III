@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { MyFirstFunctionalComponent, MyFirstClassComponent, ConditionalComponent } from './aulaII';
-import {
-  InlineStyleComponent,
-  CssComponent,
-  PreprocessorComponent,
-  StyledComponent,
-  MaterialUIStyleComponent,
-  CssModuleComponent,
-} from './aulaIII';
-import { WelcomeDialog, SplitPane, Chat, Contacts, Feed } from './aulaIV';
-import { AulaVHooks } from './aulaV';
+import { Boards, BoardDetails, Header } from './MVPTrello';
 import themes from './shared/theme';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export const ThemeContext = React.createContext(themes.light);
 
@@ -25,10 +16,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="content">
-          <ThemeContext.Provider value={darkMode ? themes.dark : themes.light}>
-            <AulaVHooks handleSwitchDarkMode={handleSwitchDarkMode} darkMode={darkMode} />
-          </ThemeContext.Provider>
+        <div className="root">
+          <Router>
+            <div className="content">
+              <ThemeContext.Provider value={darkMode ? themes.dark : themes.light}>
+                <Header />
+                <Switch>
+                  <Route path="/" exact>
+                    <Boards />
+                  </Route>
+                  <Route path="/board/:id">
+                    <BoardDetails />
+                  </Route>
+                </Switch>
+              </ThemeContext.Provider>
+            </div>
+          </Router>
         </div>
       </header>
     </div>
