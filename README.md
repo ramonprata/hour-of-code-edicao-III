@@ -124,3 +124,18 @@
   - [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext)
 
   - [Primeiros passos com React Hooks](https://medium.com/@devjpnobrega/primeiros-passos-com-react-hooks-usememo-e-usecallback-13d54da4f9ba)
+
+## Aula VII
+
+### Projeto prático | Aula dia 02/03 às 18h
+
+- Setup
+- Pacakges
+  - [Material UI](https://material-ui.com/)
+  - [Material UI - Icons](h@material-ui/icons)
+  - [React router](https://reactrouter.com/web/guides/quick-start)
+  - [uniqid](https://www.npmjs.com/package/uniqid)
+- Instalar packages
+  - `yarn` ou `npm install`
+- Start
+  - `yarn start` ou `npm run start`
