@@ -30,7 +30,13 @@ const useStyles = makeStyles({
     backgroundColor: 'rgba(0,0,0,0.8)',
   },
   headerPage: {
+    position: 'relative',
+    zIndex: 2,
     padding: '16px 24px',
+    backgroundColor: '',
+    '-webkit-box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
+    '-moz-box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
+    'box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
   },
 });
 

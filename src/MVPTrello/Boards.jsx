@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { DefaultPage } from '../shared/Components';
+import { DefaultPage, FormModal } from '../shared/Components';
 import { Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import BoardCard from './BoardCard';
+import BoardForm from './BoardForm';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const Boards = (props) => {
   const {} = props;
   const classes = useStyles(props);
+  const [showFormBoard, setShowFormBoard] = useState(false);
+
+  const location = useLocation();
+  const history = useHistory();
+
+  console.log('location :>> ', location);
+  console.log('history :>> ', history);
 
   const renderButton = () => {
     return (
       <Button
-        onClick={() => alert('clicked')}
+        onClick={() => setShowFormBoard(true)}
         variant="contained"
         color="default"
         endIcon={<AddIcon />}
@@ -21,6 +30,15 @@ const Boards = (props) => {
         Add board
       </Button>
     );
+  };
+
+  const handleSave = () => {
+    alert('salvar o board');
+    setShowFormBoard(false);
+  };
+
+  const handleCancel = () => {
+    setShowFormBoard(false);
   };
 
   return (
@@ -55,6 +73,13 @@ const Boards = (props) => {
           <BoardCard />
         </div>
       </div>
+      <FormModal
+        formTitle="New board"
+        open={showFormBoard}
+        formContent={<BoardForm />}
+        handleSave={handleSave}
+        handleCancel={handleCancel}
+      />
     </DefaultPage>
   );
 };

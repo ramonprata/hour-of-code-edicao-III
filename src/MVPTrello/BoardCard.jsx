@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { useHistory } from 'react-router';
+import uniqid from 'uniqid';
 
 const BoardCard = (props) => {
   const {} = props;
   const classes = useStyles(props);
+
+  const history = useHistory();
 
   return (
     <Card className={classes.cardContainer}>
@@ -18,7 +22,7 @@ const BoardCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => alert('details card')}>
+        <Button size="small" onClick={() => history.push(`/board/${uniqid()}`)}>
           Details
         </Button>
       </CardActions>
