@@ -19,8 +19,9 @@ const Header = (props) => {
                 foo: 'text',
               },
             }}
+            className={classes.link}
           >
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h6" className={classes.title} color="initial">
               Header
             </Typography>
           </Link>
@@ -32,18 +33,21 @@ const Header = (props) => {
 
 Header.propTypes = {};
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     maxHeight: 64,
   },
   header: {
-    backgroundColor: '#4b4b52',
+    backgroundColor: theme.palette.background.default,
   },
   title: {
     flexGrow: 1,
-    color: '#fff',
   },
-});
+  link: {
+    textDecoration: 'none',
+    color: 'unset',
+  },
+}));
 
 export default Header;

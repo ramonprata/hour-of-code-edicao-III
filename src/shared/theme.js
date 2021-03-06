@@ -1,3 +1,4 @@
+import { createMuiTheme } from '@material-ui/core/styles';
 export default {
   light: {
     foreground: '#000000',
@@ -8,3 +9,14 @@ export default {
     background: '#22222226',
   },
 };
+
+const materialUItheme = createMuiTheme({
+  status: {
+    danger: '#e53e3e',
+  },
+  palette: {
+    contrastThreshold: 5,
+    type: 'light',
+  },
+});
+export { materialUItheme };

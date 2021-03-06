@@ -24,7 +24,7 @@ const Boards = (props) => {
       <Button
         onClick={() => setShowFormBoard(true)}
         variant="contained"
-        color="default"
+        color="primary"
         endIcon={<AddIcon />}
       >
         Add board
