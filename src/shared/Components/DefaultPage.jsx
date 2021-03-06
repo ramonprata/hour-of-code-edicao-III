@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   container: {
     height: 'calc(100vh - 64px)',
     overflow: 'hidden',
-    backgroundColor: '#4b4b5290',
+    backgroundColor: 'rgba(0,0,0,0.8)',
   },
   headerPage: {
     padding: '16px 24px',
