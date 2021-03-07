@@ -44,9 +44,9 @@ BoardDetails.propTypes = {};
 const useStyles = makeStyles({
   lanesContainer: {
     display: 'flex',
+    width: 'calc(100% - 24px)',
     height: '100%',
-    padding: 24,
-    width: '100%',
+    padding: '0 0 0 16px',
     overflow: 'auto',
   },
 });

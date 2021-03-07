@@ -8,7 +8,7 @@ const DefaultPage = (props) => {
   const classes = useStyles(props);
   return (
     <Paper square className={classes.container}>
-      <Grid container justify="space-between" className={classes.headerPage}>
+      <Grid container justify="space-between" alignItems="center" className={classes.headerPage}>
         <Typography variant="h6">{title}</Typography>
         {contentHeader}
       </Grid>
@@ -32,8 +32,7 @@ const useStyles = makeStyles((theme) => {
         theme.palette.type === 'light' ? 'rgba(240, 246, 253, 0.8)' : 'rgba(0,0,0, 0.8)',
     },
     headerPage: {
-      position: 'relative',
-      padding: '16px 24px 8px 24px',
+      padding: '16px 16px 8px 16px',
     },
   };
 });

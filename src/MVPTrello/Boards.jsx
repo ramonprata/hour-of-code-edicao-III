@@ -13,9 +13,6 @@ const Boards = (props) => {
   const classes = useStyles(props);
   const [showFormBoard, setShowFormBoard] = useState(false);
 
-  const location = useLocation();
-  const history = useHistory();
-
   const renderButton = () => {
     return (
       <Button
@@ -42,6 +39,24 @@ const Boards = (props) => {
     <DefaultPage title="Boards" contentHeader={renderButton()}>
       <div className={classes.container}>
         <div className={classes.boardsContainer}>
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
+          <BoardCard />
           <BoardCard />
           <BoardCard />
           <BoardCard />
