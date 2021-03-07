@@ -9,7 +9,7 @@ const DefaultPage = (props) => {
   return (
     <Paper square className={classes.container}>
       <Grid container justify="space-between" className={classes.headerPage}>
-        <Typography variant="h5">{title}</Typography>
+        <Typography variant="h6">{title}</Typography>
         {contentHeader}
       </Grid>
 
@@ -33,12 +33,7 @@ const useStyles = makeStyles((theme) => {
     },
     headerPage: {
       position: 'relative',
-      zIndex: 2,
-      padding: '16px 24px',
-      backgroundColor: '',
-      // '-webkit-box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
-      // '-moz-box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
-      // 'box-shadow': '-2px 14px 71px 3px rgba(0,0,0,0.75)',
+      padding: '16px 24px 8px 24px',
     },
   };
 });

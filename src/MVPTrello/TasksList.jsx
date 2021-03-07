@@ -18,7 +18,6 @@ const TasksList = (props) => {
 TasksList.propTypes = {};
 
 const useStyles = makeStyles((theme) => {
-  // const variantTheme = theme.palette.type === 'light' ? '213, 228, 253' : '53, 53, 53';
   const variantTheme = theme.palette.type === 'light' ? '220, 228, 235' : '53, 53, 53';
   return {
     tasksContainer: ({ isDraggingOver }) => {
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => {
       const backgroundColor = `rgba(${variantTheme},${opacityTheme})`;
       return {
         backgroundColor,
-        width: 250,
+        width: 200,
         height: '100%',
         overflow: 'auto',
         padding: 16,

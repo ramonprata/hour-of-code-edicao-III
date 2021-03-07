@@ -45,29 +45,6 @@ const Boards = (props) => {
           <BoardCard />
           <BoardCard />
           <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
         </div>
       </div>
       <FormModal
@@ -96,7 +73,7 @@ const useStyles = makeStyles({
     height: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-    padding: '16px 0',
+    padding: '8px 0',
     justifyItems: 'center',
     rowGap: 16,
   },

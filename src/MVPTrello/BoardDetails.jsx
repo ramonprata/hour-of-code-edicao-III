@@ -46,6 +46,8 @@ const useStyles = makeStyles({
     display: 'flex',
     height: '100%',
     padding: 24,
+    width: '100%',
+    overflow: 'auto',
   },
 });
 

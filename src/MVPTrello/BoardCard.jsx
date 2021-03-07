@@ -40,6 +40,7 @@ BoardCard.propTypes = {};
 const useStyles = makeStyles({
   cardContainer: {
     width: 'calc(100% - 16px)',
+    maxWidth: 300,
   },
 });
 

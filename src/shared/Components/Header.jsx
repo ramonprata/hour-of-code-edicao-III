@@ -10,7 +10,7 @@ const Header = (props) => {
 
   return (
     <AppBar position="static" className={classes.header}>
-      <Toolbar>
+      <Toolbar variant="dense">
         <Grid container justify="space-between" alignItems="center">
           <Link
             to={{
@@ -21,7 +21,7 @@ const Header = (props) => {
             }}
             className={classes.link}
           >
-            <Typography variant="h6" className={classes.title} color="initial">
+            <Typography variant="h6" className={classes.title}>
               Header
             </Typography>
           </Link>
@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   header: {
-    height: 64,
     backgroundColor: theme.palette.background.default,
     color: theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
   },
