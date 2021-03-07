@@ -4,14 +4,25 @@ import { Header } from './shared/Components';
 import { ThemeProvider } from '@material-ui/styles';
 import { Boards, BoardDetails } from './MVPTrello';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { materialUItheme } from './shared/theme';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { useState } from 'react';
+import { getMaterialUItheme } from './shared/theme';
+
 function App() {
+  const [themeType, setTheme] = useState('light');
+
+  const materialUItheme = getMaterialUItheme(themeType);
+
+  const handleSwitchDarkMode = () => {
+    setTheme((themeType) => (themeType === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <Router>
           <ThemeProvider theme={materialUItheme}>
-            <Header />
+            <Header darkMode={themeType === 'dark'} handleSwitchDarkMode={handleSwitchDarkMode} />
             <div className="root">
               <Switch>
                 <Route path="/" exact>

@@ -10,13 +10,15 @@ export default {
   },
 };
 
-const materialUItheme = createMuiTheme({
-  status: {
-    danger: '#e53e3e',
-  },
-  palette: {
-    contrastThreshold: 5,
-    type: 'light',
-  },
-});
-export { materialUItheme };
+const getMaterialUItheme = (type) =>
+  createMuiTheme({
+    status: {
+      danger: '#e53e3e',
+    },
+    palette: {
+      type: type,
+      primary: { main: '#ccc', contrastText: '#000' },
+      secondary: { main: '#8b3694', contrastText: '#fff' },
+    },
+  });
+export { getMaterialUItheme };

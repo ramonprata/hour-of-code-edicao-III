@@ -26,6 +26,7 @@ const BoardForm = (props) => {
         fullWidth
         multiline
         rows={4}
+        variant="filled"
       />
     </>
   );

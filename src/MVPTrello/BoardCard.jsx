@@ -22,7 +22,12 @@ const BoardCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => history.push(`/board/${uniqid()}`)}>
+        <Button
+          size="small"
+          onClick={() => history.push(`/board/${uniqid()}`)}
+          color="default"
+          variant="outlined"
+        >
           Details
         </Button>
       </CardActions>

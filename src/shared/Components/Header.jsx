@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, FormControlLabel, Toolbar, Typography, Switch, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  const {} = props;
+  const { darkMode, handleSwitchDarkMode } = props;
   const classes = useStyles(props);
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.header}>
-        <Toolbar>
+    <AppBar position="static" className={classes.header}>
+      <Toolbar>
+        <Grid container justify="space-between" alignItems="center">
           <Link
             to={{
               pathname: '/',
@@ -25,9 +25,20 @@ const Header = (props) => {
               Header
             </Typography>
           </Link>
-        </Toolbar>
-      </AppBar>
-    </div>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={darkMode}
+                onChange={handleSwitchDarkMode}
+                name="enebledDarkMode"
+                color="primary"
+              />
+            }
+            label="Dark mode"
+          />
+        </Grid>
+      </Toolbar>
+    </AppBar>
   );
 };
 
@@ -36,10 +47,11 @@ Header.propTypes = {};
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxHeight: 64,
   },
   header: {
+    height: 64,
     backgroundColor: theme.palette.background.default,
+    color: theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
   },
   title: {
     flexGrow: 1,

@@ -11,11 +11,11 @@ const FormModal = (props) => {
     <Dialog open={open}>
       <DialogTitle>{formTitle}</DialogTitle>
       <DialogContent>{formContent}</DialogContent>
-      <DialogActions>
+      <DialogActions className={classes.actionsContainer}>
         <Button onClick={handleCancel} color="default">
           Cancel
         </Button>
-        <Button onClick={handleSave} color="primary">
+        <Button onClick={handleSave} color="secondary" variant="contained">
           Save
         </Button>
       </DialogActions>
@@ -30,6 +30,10 @@ FormModal.propTypes = {
   handleSave: PropTypes.func,
 };
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+  actionsContainer: {
+    padding: 24,
+  },
+});
 
 export default FormModal;

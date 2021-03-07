@@ -16,15 +16,12 @@ const Boards = (props) => {
   const location = useLocation();
   const history = useHistory();
 
-  console.log('location :>> ', location);
-  console.log('history :>> ', history);
-
   const renderButton = () => {
     return (
       <Button
         onClick={() => setShowFormBoard(true)}
         variant="contained"
-        color="primary"
+        color="secondary"
         endIcon={<AddIcon />}
       >
         Add board
