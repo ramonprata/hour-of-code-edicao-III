@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, FormControlLabel, Toolbar, Typography, Switch, Grid } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  const { darkMode, handleSwitchDarkMode } = props;
   const classes = useStyles(props);
 
   return (
@@ -25,17 +24,6 @@ const Header = (props) => {
               Header
             </Typography>
           </Link>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={darkMode}
-                onChange={handleSwitchDarkMode}
-                name="enebledDarkMode"
-                color="primary"
-              />
-            }
-            label="Dark mode"
-          />
         </Grid>
       </Toolbar>
     </AppBar>

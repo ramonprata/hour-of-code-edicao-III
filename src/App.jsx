@@ -1,28 +1,22 @@
-import uniqid from 'uniqid';
 import './App.css';
 import { Header } from './shared/Components';
 import { ThemeProvider } from '@material-ui/styles';
 import { Boards, BoardDetails } from './MVPTrello';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { useState } from 'react';
+
 import { getMaterialUItheme } from './shared/theme';
 
 function App() {
-  const [themeType, setTheme] = useState('light');
+  const themeType = 'dark';
 
   const materialUItheme = getMaterialUItheme(themeType);
-
-  const handleSwitchDarkMode = () => {
-    setTheme((themeType) => (themeType === 'dark' ? 'light' : 'dark'));
-  };
 
   return (
     <div className="App">
       <header className="App-header">
         <Router>
           <ThemeProvider theme={materialUItheme}>
-            <Header darkMode={themeType === 'dark'} handleSwitchDarkMode={handleSwitchDarkMode} />
+            <Header darkMode={themeType === 'dark'} />
             <div className="root">
               <Switch>
                 <Route path="/" exact>
