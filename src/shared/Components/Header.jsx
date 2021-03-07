@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: theme.palette.background.default,
     padding: 0,
-    color: theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
     '& > div': {
       padding: '0 16px',
     },

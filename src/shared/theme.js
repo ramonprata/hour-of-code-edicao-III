@@ -20,5 +20,10 @@ const getMaterialUItheme = (type) =>
       primary: { main: '#ccc', contrastText: '#000' },
       secondary: { main: '#8b3694', contrastText: '#fff' },
     },
+    typography: {
+      allVariants: {
+        color: type === 'light' ? '#444' : '#fff',
+      },
+    },
   });
 export { getMaterialUItheme };
