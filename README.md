@@ -139,3 +139,15 @@
   - `yarn` ou `npm install`
 - Start
   - `yarn start` ou `npm run start`
+
+## Aula VIII e IX
+
+### Projeto prático | Aula dia 04/03 09/03 às 18h
+
+- Setup
+- Pacakges
+  - [React beautiful dnd](https://www.npmjs.com/package/react-beautiful-dnd)
+- Instalar packages
+  - `yarn` ou `npm install`
+- Start
+  - `yarn start` ou `npm run start`
