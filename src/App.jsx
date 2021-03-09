@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getMaterialUItheme } from './shared/theme';
 
 function App() {
-  const themeType = 'light';
+  const themeType = 'dark';
 
   const materialUItheme = getMaterialUItheme(themeType);
 
