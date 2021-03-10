@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { DefaultPage, FormModal } from '../shared/Components';
@@ -7,11 +7,25 @@ import AddIcon from '@material-ui/icons/Add';
 import BoardCard from './BoardCard';
 import BoardForm from './BoardForm';
 import { useLocation, useHistory } from 'react-router-dom';
+import TrelloRepository from './TrelloRepository';
+import uniqid from 'uniqid';
+
+const TrelloRepo = new TrelloRepository();
 
 const Boards = (props) => {
   const {} = props;
   const classes = useStyles(props);
   const [showFormBoard, setShowFormBoard] = useState(false);
+
+  useEffect(() => {
+    const loadBoards = async () => {
+      const boards = await TrelloRepo.addBoard({
+        id: uniqid(),
+      });
+      console.log('board :>> ', boards);
+    };
+    loadBoards();
+  }, []);
 
   const renderButton = () => {
     return (
