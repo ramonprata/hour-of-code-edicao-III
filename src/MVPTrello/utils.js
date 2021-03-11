@@ -1,3 +1,5 @@
+import uniqid from 'uniqid';
+
 export const onDragEnd = (result, lanes, setLanes) => {
   if (!result.destination) return;
   const { source, destination } = result;
@@ -33,4 +35,17 @@ export const onDragEnd = (result, lanes, setLanes) => {
       },
     });
   }
+};
+
+export const getBoardWithLanes = (board, newLane) => {
+  const lane = {
+    id: uniqid(),
+    laneName: newLane,
+    tasks: [],
+  };
+  const boardWithLanes = {
+    ...board,
+    lanes: board.lanes ? [...board.lanes, lane] : [lane],
+  };
+  return boardWithLanes;
 };

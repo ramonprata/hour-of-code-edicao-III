@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { getMaterialUItheme } from './shared/theme';
-import './MVPTrello/TrelloMockAPI';
+import './shared/mocks/mockAPI';
 
 function App() {
   const [themeType, setTheme] = useState('light');

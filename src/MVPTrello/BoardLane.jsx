@@ -14,7 +14,7 @@ const BoardLane = (props) => {
   return (
     <Paper className={classes.laneContainer} key={laneId}>
       <header className={classes.laneHeader}>
-        <Typography variant="h5">Title</Typography>
+        <Typography variant="h5">{lane.laneName}</Typography>
       </header>
       <Droppable droppableId={laneId} key={laneId}>
         {(provided, snapshot) => {

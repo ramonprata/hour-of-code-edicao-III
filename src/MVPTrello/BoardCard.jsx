@@ -6,7 +6,8 @@ import { useHistory } from 'react-router';
 import uniqid from 'uniqid';
 
 const BoardCard = (props) => {
-  const {} = props;
+  const { board } = props;
+  const { boardName, boardDescription } = board;
   const classes = useStyles(props);
 
   const history = useHistory();
@@ -15,16 +16,16 @@ const BoardCard = (props) => {
     <Card className={classes.cardContainer}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          titulo card
+          {boardName}
         </Typography>
         <Typography color="textSecondary" gutterBottom>
-          Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+          {boardDescription}
         </Typography>
       </CardContent>
       <CardActions>
         <Button
           size="small"
-          onClick={() => history.push(`/board/${uniqid()}`)}
+          onClick={() => history.push(`/board/${board.id}`)}
           color="default"
           variant="outlined"
         >

@@ -3,10 +3,18 @@ import { BASE_URL } from '../shared/consts';
 import * as localStorage from '../shared/localStorage';
 
 class TrelloRepository {
-  getBoards() {
-    return axios.get(`${BASE_URL}/boards`);
+  async getBoards() {
+    console.log('getBoards');
+    const { data } = await axios.get(`${BASE_URL}/boards`);
+    return data;
   }
-  addBoard(board) {
+
+  async getBoardById(boardId) {
+    const { data } = await axios.get(`${BASE_URL}/boards/${boardId}`);
+    return data;
+  }
+
+  saveBoard(board) {
     try {
       return axios.post(`${BASE_URL}/boards`, board);
     } catch (error) {
