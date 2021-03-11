@@ -28,7 +28,13 @@ const TextInputButton = (props) => {
           onChange={onChangeText}
         />
       ) : (
-        <Button color="default" fullWidth endIcon={<AddIcon />} onClick={onClickButton}>
+        <Button
+          color="default"
+          variant="outlined"
+          fullWidth
+          endIcon={<AddIcon />}
+          onClick={onClickButton}
+        >
           {buttonLabel}
         </Button>
       )}

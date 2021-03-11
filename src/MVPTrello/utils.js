@@ -38,14 +38,15 @@ export const onDragEnd = (result, lanes, setLanes) => {
 };
 
 export const getBoardWithLanes = (board, newLane) => {
+  const laneId = uniqid();
   const lane = {
-    id: uniqid(),
+    id: laneId,
     laneName: newLane,
     tasks: [],
   };
   const boardWithLanes = {
     ...board,
-    lanes: board.lanes ? [...board.lanes, lane] : [lane],
+    lanes: { ...board.lanes, [laneId]: lane },
   };
   return boardWithLanes;
 };

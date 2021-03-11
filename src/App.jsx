@@ -8,7 +8,7 @@ import { getMaterialUItheme } from './shared/theme';
 import './shared/mocks/mockAPI';
 
 function App() {
-  const [themeType, setTheme] = useState('light');
+  const [themeType, setTheme] = useState('dark');
 
   const materialUItheme = getMaterialUItheme(themeType);
 

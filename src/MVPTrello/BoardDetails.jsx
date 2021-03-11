@@ -42,6 +42,31 @@ const BoardDetails = (props) => {
     return <TaskCard task={task} index={index} />;
   };
 
+  const saveLane = async () => {
+    if (boardDetail && newLane) {
+      const boardWithLanes = getBoardWithLanes(boardDetail, newLane);
+      await TrelloRepo.saveBoard(boardWithLanes);
+      loadBoardDetail();
+      setNewLane(null);
+    }
+    setShowTextField(false);
+  };
+
+  const saveTask = async (laneId, newTask) => {
+    if (boardDetail && laneId) {
+      const lane = boardDetail.lanes[laneId];
+      lane.tasks.push(newTask);
+      const boardWithTask = {
+        ...boardDetail,
+        lanes: {
+          ...boardDetail.lanes,
+          [laneId]: lane,
+        },
+      };
+      console.log('boardWithTask :>> ', boardWithTask);
+    }
+  };
+
   const renderLanes = () => {
     if (boardDetail.lanes) {
       return Object.entries(boardDetail.lanes).map(([laneId, lane]) => {
@@ -52,22 +77,12 @@ const BoardDetails = (props) => {
             lane={lane}
             renderTask={renderTask}
             key={laneId}
+            saveTask={saveTask}
           />
         );
       });
     }
     return null;
-  };
-
-  const saveLane = async () => {
-    if (boardDetail && newLane) {
-      const boardWithLanes = getBoardWithLanes(boardDetail, newLane);
-      await TrelloRepo.saveBoard(boardWithLanes);
-      loadBoardDetail();
-      setNewLane(null);
-    } else {
-      setShowTextField(false);
-    }
   };
 
   return (

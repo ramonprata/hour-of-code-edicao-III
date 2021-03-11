@@ -21,7 +21,7 @@ const TaskCard = (props) => {
               snapshot.isDragging ? classes.taskDragging : ''
             }`}
           >
-            <Typography variant="p">{task.description}</Typography>
+            <Typography variant="p">{task.taskDescription}</Typography>
 
             {provided.placeholder}
           </Card>
