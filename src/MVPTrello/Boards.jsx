@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { DefaultPage } from '../shared/Components';
-import { Button, CircularProgress } from '@material-ui/core';
+import { Button, CircularProgress, Grid } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import BoardCard from './BoardCard';
 import BoardForm from './BoardForm';
@@ -69,18 +69,26 @@ const Boards = (props) => {
 
   const renderContent = () => {
     if (statusRequest.loading) {
-      return <CircularProgress color="secondary" />;
+      return (
+        <Grid container className={classes.loadingContainer} justify="center" alignItems="center">
+          <CircularProgress color="secondary" />
+        </Grid>
+      );
     }
     if (boards) {
-      return boards.map((board) => <BoardCard board={board} />);
+      return (
+        <div className={classes.boardsContainer}>
+          {boards.map((board) => (
+            <BoardCard board={board} />
+          ))}
+        </div>
+      );
     }
   };
 
   return (
     <DefaultPage title="Boards" contentHeader={renderButton()}>
-      <div className={classes.container}>
-        <div className={classes.boardsContainer}>{renderContent()}</div>
-      </div>
+      <div className={classes.container}>{renderContent()}</div>
       <BoardForm showFormBoard={showFormBoard} closeModal={handleCloseModal} />
     </DefaultPage>
   );
@@ -97,15 +105,19 @@ const useStyles = makeStyles({
     overflow: 'auto',
     maxHeight: 'calc(100vh - 180px)',
   },
-  boardsContainer: ({ loading }) => ({
+  boardsContainer: ({}) => ({
     width: '100%',
     height: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 260px))', // mobile max 1fr - 260px
     padding: '8px 0',
-    justifyItems: loading ? 'center' : 'start', // only mobile
+    justifyItems: 'center',
     rowGap: 16,
   }),
+  loadingContainer: {
+    width: '100%',
+    height: '50vh',
+  },
 });
 
 export default Boards;

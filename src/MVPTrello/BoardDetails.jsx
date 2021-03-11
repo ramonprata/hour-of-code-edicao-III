@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { DefaultPage, TextInputButton } from '../shared/Components';
-import { lanesMock } from '../shared/mocks/lanes.mock';
 import { DragDropContext } from 'react-beautiful-dnd';
 import BoardLane from './BoardLane';
-import { getBoardWithLanes, onDragEnd } from './utils';
+import { addLaneToBoard, addTaksToLane, getRearrangedLanes } from './utils';
 import TaskCard from './TaskCard';
 import { Paper } from '@material-ui/core';
 import { useParams, useHistory } from 'react-router';
@@ -15,15 +14,12 @@ const TrelloRepo = new TrelloRepository();
 
 const BoardDetails = (props) => {
   const classes = useStyles(props);
-  const [lanes, setLanes] = useState(lanesMock);
   const [boardDetail, setBoardDetail] = useState({});
   const [newLane, setNewLane] = useState(null);
   const [showTextField, setShowTextField] = useState(false);
   const params = useParams();
   const history = useHistory();
   const boardId = params.id;
-
-  console.log('boardDetail :>> ', boardDetail);
 
   const loadBoardDetail = async () => {
     try {
@@ -44,7 +40,7 @@ const BoardDetails = (props) => {
 
   const saveLane = async () => {
     if (boardDetail && newLane) {
-      const boardWithLanes = getBoardWithLanes(boardDetail, newLane);
+      const boardWithLanes = addLaneToBoard(boardDetail, newLane);
       await TrelloRepo.saveBoard(boardWithLanes);
       loadBoardDetail();
       setNewLane(null);
@@ -54,17 +50,20 @@ const BoardDetails = (props) => {
 
   const saveTask = async (laneId, newTask) => {
     if (boardDetail && laneId) {
-      const lane = boardDetail.lanes[laneId];
-      lane.tasks.push(newTask);
-      const boardWithTask = {
-        ...boardDetail,
-        lanes: {
-          ...boardDetail.lanes,
-          [laneId]: lane,
-        },
-      };
-      console.log('boardWithTask :>> ', boardWithTask);
+      const boardWithTaks = addTaksToLane(boardDetail, laneId, newTask);
+      await TrelloRepo.saveBoard(boardWithTaks);
+      loadBoardDetail();
     }
+  };
+
+  const onDragEnd = async (result) => {
+    const rearrangedLanes = getRearrangedLanes(result, boardDetail.lanes);
+    const rearrangedBoard = {
+      ...boardDetail,
+      lanes: rearrangedLanes,
+    };
+    await TrelloRepo.saveBoard(rearrangedBoard);
+    loadBoardDetail();
   };
 
   const renderLanes = () => {
@@ -87,7 +86,7 @@ const BoardDetails = (props) => {
 
   return (
     <DefaultPage title="Board Description">
-      <DragDropContext onDragEnd={(result) => onDragEnd(result, boardDetail.lanes, setLanes)}>
+      <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
         <div className={classes.lanesContainer}>
           {renderLanes()}
 
