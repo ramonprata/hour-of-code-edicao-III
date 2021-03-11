@@ -13,8 +13,6 @@ const TextInputButton = (props) => {
     textFieldLabel,
     textValue,
   } = props;
-  const classes = useStyles(props);
-  const {} = classes;
 
   return (
     <>

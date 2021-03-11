@@ -8,7 +8,7 @@ import BoardLane from './BoardLane';
 import { getBoardWithLanes, onDragEnd } from './utils';
 import TaskCard from './TaskCard';
 import { Paper } from '@material-ui/core';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import TrelloRepository from './TrelloRepository';
 
 const TrelloRepo = new TrelloRepository();
@@ -20,13 +20,18 @@ const BoardDetails = (props) => {
   const [newLane, setNewLane] = useState(null);
   const [showTextField, setShowTextField] = useState(false);
   const params = useParams();
+  const history = useHistory();
   const boardId = params.id;
 
   console.log('boardDetail :>> ', boardDetail);
 
   const loadBoardDetail = async () => {
-    const board = await TrelloRepo.getBoardById(boardId);
-    setBoardDetail(board);
+    try {
+      const board = await TrelloRepo.getBoardById(boardId);
+      setBoardDetail(board);
+    } catch (error) {
+      history.replace('/');
+    }
   };
 
   useEffect(() => {
