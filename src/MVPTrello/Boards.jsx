@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { DefaultPage, FormModal } from '../shared/Components';
+import { DefaultPage } from '../shared/Components';
 import { Button, CircularProgress } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import BoardCard from './BoardCard';
 import BoardForm from './BoardForm';
-import { useLocation, useHistory } from 'react-router-dom';
 import TrelloRepository from './TrelloRepository';
 
 const TrelloRepo = new TrelloRepository();

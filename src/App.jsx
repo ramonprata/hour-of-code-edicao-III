@@ -1,10 +1,8 @@
-import uniqid from 'uniqid';
 import './App.css';
 import { Header } from './shared/Components';
 import { ThemeProvider } from '@material-ui/styles';
 import { Boards, BoardDetails } from './MVPTrello';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { getMaterialUItheme } from './shared/theme';
 import './shared/mocks/mockAPI';

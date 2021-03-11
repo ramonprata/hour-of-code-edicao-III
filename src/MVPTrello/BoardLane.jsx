@@ -7,9 +7,7 @@ import TasksList from './TasksList';
 
 const BoardLane = (props) => {
   const { lane, laneId, renderTask } = props;
-
   const classes = useStyles();
-  const {} = classes;
 
   return (
     <Paper className={classes.laneContainer} key={laneId}>

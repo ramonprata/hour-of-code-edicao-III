@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
 import { TextField } from '@material-ui/core';
 import { FormModal } from '../shared/Components';
 import TrelloRepository from './TrelloRepository';
@@ -30,8 +29,6 @@ const BoardForm = (props) => {
     TrelloRepo.saveBoard(boardSave);
     closeModal();
   };
-
-  const classes = useStyles(props);
 
   const renderFormContent = () => (
     <>
@@ -72,7 +69,5 @@ const BoardForm = (props) => {
 };
 
 BoardForm.propTypes = {};
-
-const useStyles = makeStyles({});
 
 export default BoardForm;
