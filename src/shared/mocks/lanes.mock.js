@@ -3,12 +3,12 @@ import uniqid from 'uniqid';
 const tasksMock = [
   {
     id: uniqid(),
-    description:
+    taskDescription:
       'Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.',
   },
   {
     id: uniqid(),
-    description:
+    taskDescription:
       'Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.',
   },
 ];

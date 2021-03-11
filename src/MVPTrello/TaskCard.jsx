@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Draggable } from 'react-beautiful-dnd';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, Typography } from '@material-ui/core';
 
 const TaskCard = (props) => {
   const { task, index } = props;
@@ -21,7 +21,7 @@ const TaskCard = (props) => {
               snapshot.isDragging ? classes.taskDragging : ''
             }`}
           >
-            <Typography variant="p">{task.description}</Typography>
+            <Typography variant="p">{task.taskDescription}</Typography>
 
             {provided.placeholder}
           </Card>
