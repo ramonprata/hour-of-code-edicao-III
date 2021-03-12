@@ -12,6 +12,7 @@ const TextInputButton = (props) => {
     buttonLabel,
     textFieldLabel,
     textValue,
+    typographyProps,
   } = props;
 
   return (
@@ -26,6 +27,8 @@ const TextInputButton = (props) => {
           required
           value={textValue}
           onChange={onChangeText}
+          multiline
+          {...typographyProps}
         />
       ) : (
         <Button

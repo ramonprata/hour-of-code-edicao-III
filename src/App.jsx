@@ -6,6 +6,7 @@ import { Boards, BoardDetails } from './MVPTrello';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { getMaterialUItheme } from './shared/theme';
+import './shared/mocks/mockAPI';
 
 function App() {
   const [themeType, setTheme] = useState('dark');

@@ -43,7 +43,7 @@ const Boards = (props) => {
       setStatusRequest((status) => ({
         ...status,
         loading: false,
-        error: false,
+        error: true,
       }));
     }
   };
@@ -54,7 +54,8 @@ const Boards = (props) => {
     }
   }, [showFormBoard]);
 
-  const classes = useStyles(props);
+  const classes = useStyles({ isMoble });
+
   const renderButton = () => {
     if (!isMoble) {
       return (
@@ -100,7 +101,7 @@ const Boards = (props) => {
       <BoardForm showFormBoard={showFormBoard} closeModal={handleCloseModal} />
       <div className={classes.fabContainer}>
         {isMoble && (
-          <Fab color="primary" aria-label="add" onClick={() => setShowFormBoard(true)}>
+          <Fab color="secondary" aria-label="add" onClick={() => setShowFormBoard(true)}>
             <AddIcon />
           </Fab>
         )}
@@ -120,11 +121,11 @@ const useStyles = makeStyles({
     overflow: 'auto',
     maxHeight: 'calc(100vh - 180px)',
   },
-  boardsContainer: ({}) => ({
+  boardsContainer: ({ isMoble }) => ({
     width: '100%',
     height: '100%',
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 260px))', // mobile max 1fr - 260px
+    gridTemplateColumns: `repeat(auto-fit, minmax(260px, ${isMoble ? '1fr' : '260px'}))`, // mobile max 1fr - 260px
     padding: '8px 0',
     justifyItems: 'center',
     rowGap: 16,
@@ -135,7 +136,7 @@ const useStyles = makeStyles({
   },
   fabContainer: {
     position: 'absolute',
-    bottom: 32,
+    bottom: 42,
     right: 24,
   },
 });

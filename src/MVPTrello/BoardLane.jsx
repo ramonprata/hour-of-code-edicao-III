@@ -6,7 +6,6 @@ import { Droppable } from 'react-beautiful-dnd';
 import { Typography, Paper } from '@material-ui/core';
 import TasksList from './TasksList';
 import { TextInputButton } from '../shared/Components';
-import { addLaneToBoard } from './utils';
 
 const BoardLane = (props) => {
   const { lane, laneId, renderTask, saveTask } = props;
@@ -22,8 +21,8 @@ const BoardLane = (props) => {
       };
       saveTask(laneId, newTask);
       setTaskDescription(null);
+      setShowTextField(false);
     }
-    setShowTextField(false);
   };
 
   return (
@@ -39,6 +38,7 @@ const BoardLane = (props) => {
           onChangeText={(e) => setTaskDescription(e.target.value)}
           onClickButton={() => setShowTextField(true)}
           buttonLabel="Add new task"
+          typographyProps={{ multiline: true, rows: 4 }}
         />
       </div>
       <Droppable droppableId={laneId} key={laneId}>

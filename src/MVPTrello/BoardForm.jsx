@@ -9,7 +9,6 @@ const TrelloRepo = new TrelloRepository();
 
 const BoardForm = (props) => {
   const { showFormBoard, closeModal } = props;
-
   const [newBoard, setNewBoard] = useState({
     boardName: '',
     boardDescription: '',
@@ -27,9 +26,7 @@ const BoardForm = (props) => {
       id: uniqid(),
       ...newBoard,
     };
-    console.log('boardSave :>> ', boardSave);
     TrelloRepo.saveBoard(boardSave);
-
     closeModal();
   };
 

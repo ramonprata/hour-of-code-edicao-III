@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 
 const BoardCard = (props) => {
   const { board } = props;
+  const { boardName, boardDescription } = board;
   const classes = useStyles(props);
 
   const history = useHistory();
@@ -14,10 +15,10 @@ const BoardCard = (props) => {
     <Card className={classes.cardContainer}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          {board.boardName}
+          {boardName}
         </Typography>
         <Typography color="textSecondary" gutterBottom>
-          {board.boardDescription}
+          {boardDescription}
         </Typography>
       </CardContent>
       <CardActions>

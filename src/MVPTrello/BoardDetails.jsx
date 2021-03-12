@@ -85,7 +85,7 @@ const BoardDetails = (props) => {
   };
 
   return (
-    <DefaultPage title="Board Description">
+    <DefaultPage title={boardDetail.boardName}>
       <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
         <div className={classes.lanesContainer}>
           {renderLanes()}
@@ -120,7 +120,7 @@ const useStyles = makeStyles({
     height: 'fit-content',
     minHeight: 54,
     padding: 16,
-    width: 230,
+    width: 270,
   },
 });
 
