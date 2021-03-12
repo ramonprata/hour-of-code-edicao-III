@@ -151,3 +151,16 @@
   - `yarn` ou `npm install`
 - Start
   - `yarn start` ou `npm run start`
+
+## Aula X
+
+### Projeto prático | Aula dia 11/03 às 18h
+
+- Setup
+- Pacakges
+  - [Axios mock adapter](https://github.com/ctimmerm/axios-mock-adapter)
+  - [Axios](https://github.com/axios/axios)
+- Instalar packages
+  - `yarn` ou `npm install`
+- Start
+  - `yarn start` ou `npm run start`
