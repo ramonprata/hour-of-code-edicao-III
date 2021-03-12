@@ -1,4 +1,5 @@
 import './App.css';
+import './shared/mocks/mockAPI';
 import { Header } from './shared/Components';
 import { ThemeProvider } from '@material-ui/styles';
 import { Boards, BoardDetails } from './MVPTrello';

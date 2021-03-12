@@ -11,5 +11,8 @@ export const useWidthResize = () => {
     };
   }, [width]);
 
-  return width;
+  return {
+    width,
+    isMoble: width < 460,
+  };
 };
